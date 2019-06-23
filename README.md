@@ -1,5 +1,14 @@
 # README
 
+由于经常在github上查看源码,特别是readme.mk文件
+ 
+因此使用vscode 插件 markdown-translate
+ 
+ vscode 插件[markdown-translate](https://marketplace.visualstudio.com/items?itemName=markdown-translate.markdown-translate) 翻译readme.md 等markdown文件
+ 
+  安装好后找到markdown文件 按下右上角的T，等待一段时间会显示翻译结果
+  
+
 ## 例子
 
 ![使用的样子](images/example.png)
