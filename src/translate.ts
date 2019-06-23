@@ -68,7 +68,7 @@ export default class TranslateMd {
      try {
       const getPromise: any = util.promisify(request.get);  // 
 
-      const encode = word
+      const encode = urlencode.encode(word)
 
       const tkkk = this.tk(word, this.tkk)
 
@@ -78,7 +78,7 @@ export default class TranslateMd {
      
       let translateRst: any = await getPromise(url);
       // 可以加入 try catch 捕获异常  也可以加 .catch()
-      console.log("translateRst");
+      //console.log("translateRst");
       // console.log(translateRst);
   
       let tranWord: any = JSON.parse(translateRst.body);
@@ -104,7 +104,7 @@ export default class TranslateMd {
           "翻译页面", // 视图标题
           vscode.ViewColumn.Two, // 显示在编辑器的哪个部位
           {
-            enableScripts: false, // 启用JS，默认禁用
+            enableScripts: true, // 启用JS，默认禁用
           },
         );
 
@@ -122,10 +122,6 @@ export default class TranslateMd {
         }
 
         const result: any = marked.parser(tokens); // 又把这个对象转化为html字符串。（<p>text</p>）
-
-        // let result = `<p>text</p>`
-
-        vscode.window.showInformationMessage('Hello World!'+result);
 
         this.panel.webview.html = result;
         this.panel.webview.onDidReceiveMessage(

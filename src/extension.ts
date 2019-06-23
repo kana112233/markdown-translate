@@ -21,8 +21,6 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.commands.registerCommand('extension.demo.testMenuShow', () => {
 			const tmd =  new TranslateMd();
 			tmd.launch();
-			console.log('123');
-			vscode.window.showInformationMessage('Hello World!'+'111');
 		})
 	);
 }
