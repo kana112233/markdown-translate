@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "markdown-translate" extension will be documented in this file.
+## add feature
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+add feature translate
