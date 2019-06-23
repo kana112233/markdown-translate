@@ -4,12 +4,17 @@
   "description": "markdown readme translate",
   "version": "0.0.3",
   "publisher": "markdown-translate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kana112233/markdown-translate.git"
+  },
   "engines": {
     "vscode": "^1.31.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "favicon.ico",
   "activationEvents": [
     "*"
   ],
@@ -24,8 +29,8 @@
         "command": "extension.demo.testMenuShow",
         "title": "翻译当前文件",
         "icon": {
-          "light": "./images/tool-light.svg",
-          "dark": "./images/tool-light.svg"
+          "light": "./images/translate.svg",
+          "dark": "./images/translate.svg"
         }
       }
     ],
