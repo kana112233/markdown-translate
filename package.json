@@ -2,7 +2,7 @@
   "name": "markdown-translate",
   "displayName": "markdown translate",
   "description": "markdown readme translate",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "publisher": "markdown-translate",
   "repository": {
     "type": "git",
@@ -22,8 +22,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
+        "command": "extension.showTextarea",
+        "title": "新建空白页",
+        "icon": {
+          "light": "./images/note.svg",
+          "dark": "./images/note.svg"
+        }
       },
       {
         "command": "extension.demo.testMenuShow",
@@ -37,8 +41,13 @@
     "menus": {
       "editor/title": [
         {
-          "when": "editorFocus && resourceLangId == markdown",
+          "when": "editorFocus && (resourceLangId == markdown)",
           "command": "extension.demo.testMenuShow",
+          "group": "navigation"
+        },
+        {
+          "when": "",
+          "command": "extension.showTextarea",
           "group": "navigation"
         }
       ],

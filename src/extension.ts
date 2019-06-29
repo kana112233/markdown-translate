@@ -12,11 +12,21 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "markdown-translate" is now active!');
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('extension.helloWorld', () => {
+		vscode.commands.registerCommand('extension.showTextarea', () => {
 			// The code you place here will be executed every time your command is executed
+			let panel = vscode.window.createWebviewPanel(
+				"textarea", // viewType
+				"空白页面", // 视图标题
+				vscode.ViewColumn.Three, // 显示在编辑器的哪个部位
+				{
+				  enableScripts: true, // 启用JS，默认禁用
+				},
+			  );
+			panel.webview.html = `<textarea rows="100" cols="100" > </textarea>`;
+
 
 			// Display a message box to the user
-			vscode.window.showInformationMessage('Hello World!');
+			// vscode.window.showInformationMessage('Hello World!');
 		}),
 		vscode.commands.registerCommand('extension.demo.testMenuShow', () => {
 			const tmd =  new TranslateMd();
