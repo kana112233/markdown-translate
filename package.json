@@ -2,7 +2,7 @@
   "name": "markdown-translate",
   "displayName": "markdown translate",
   "description": "markdown readme translate",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "publisher": "markdown-translate",
   "repository": {
     "type": "git",
@@ -22,39 +22,62 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.showTextarea",
-        "title": "新建空白页",
+        "command": "extension.ppy.showTextarea",
+        "title": "新建空白页(new empty page)",
         "icon": {
           "light": "./images/note.svg",
           "dark": "./images/note.svg"
         }
       },
       {
-        "command": "extension.demo.testMenuShow",
-        "title": "翻译当前文件",
+        "command": "extension.ppy.translate",
+        "title": "翻译文件(markdown translate)",
         "icon": {
           "light": "./images/translate.svg",
           "dark": "./images/translate.svg"
+        }
+      },
+      {
+        "command": "extension.ppy.preview",
+        "title": "预览(markdown preview)",
+        "icon": {
+          "light": "./images/eyes.svg",
+          "dark": "./images/eyes.svg"
         }
       }
     ],
     "menus": {
       "editor/title": [
         {
-          "when": "editorFocus && (resourceLangId == markdown)",
-          "command": "extension.demo.testMenuShow",
+          "when": "editorLangId == markdown",
+          "command": "extension.ppy.translate",
           "group": "navigation"
         },
         {
           "when": "",
-          "command": "extension.showTextarea",
+          "command": "extension.ppy.showTextarea",
+          "group": "navigation"
+        },
+        {
+          "when": "editorLangId == markdown",
+          "command": "extension.ppy.preview",
           "group": "navigation"
         }
       ],
       "editor/title/context": [
         {
-          "when": "resourceLangId == markdown",
-          "command": "extension.demo.testMenuShow",
+          "when": "editorLangId == markdown",
+          "command": "extension.ppy.preview",
+          "group": "navigation"
+        },
+        {
+          "when": "",
+          "command": "extension.ppy.translate",
+          "group": "navigation"
+        },
+        {
+          "when": "editorLangId == markdown",
+          "command": "extension.ppy.showTextarea",
           "group": "navigation"
         }
       ]
@@ -79,6 +102,7 @@
     "@types/request": "^2.48.1",
     "@types/urlencode": "^1.1.1",
     "extend": "^3.0.2",
+    "markdown-it": "8.4.2",
     "marked": "^0.6.2",
     "psl": "^1.1.33",
     "request": "^2.88.0",

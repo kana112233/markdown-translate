@@ -107,6 +107,13 @@ export default class TranslateMd {
             enableScripts: true, // 启用JS，默认禁用
           },
         );
+        
+        var md = require('markdown-it')();
+       
+         
+        // let tokens2 = md.parse(selectedText)
+        // console.log(tokens2)
+        
 
         const tokens: any = marked.lexer(selectedText); // 把text解析为一个marked.js的内部对象
         for (const key in tokens) {
@@ -121,9 +128,12 @@ export default class TranslateMd {
           }
         }
 
-        const result: any = marked.parser(tokens); // 又把这个对象转化为html字符串。（<p>text</p>）
+        const rendererResult: any = marked.parser(tokens); // 又把这个对象转化为html字符串。（<p>text</p>）
 
-        this.panel.webview.html = result;
+        // const rendererResult = renderer.render(tokens2);
+        // console.log(rendererResult)
+        this.panel.webview.html = rendererResult;
+        
         this.panel.webview.onDidReceiveMessage(
           (message) => {},
           null,
