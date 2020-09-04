@@ -103,7 +103,7 @@
     "@types/urlencode": "^1.1.1",
     "extend": "^3.0.2",
     "markdown-it": "8.4.2",
-    "marked": "^0.6.2",
+    "marked": "^1.1.1",
     "psl": "^1.1.33",
     "request": "^2.88.0",
     "tough-cookie": "^3.0.1",
